@@ -11,10 +11,6 @@ class TestInsertionSortList < Minitest::Test
     @problem = Problems::InsertionSortListProblem.new
   end
 
-  def test_hello
-    assert_equal "OHAI!", "OHAI!"
-  end
-
   def test_odd_list
     input = [5, 4, 3, 2, 1]
     head_odd = linked_list input

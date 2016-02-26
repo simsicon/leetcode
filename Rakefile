@@ -11,3 +11,13 @@ Rake::TestTask.new do |t|
   t.warning = true
   t.verbose = true
 end
+
+namespace :test do
+  desc "Run test isolated"
+  task :isolated do
+    ARGV.shift
+    ARGV.each do |name|
+      sh(Gem.ruby, '-w', "-I#{dir}/lib", "-I#{dir}/test", Dir.glob("#{dir}/test/cases/**/#{name}.rb").last) or raise "Failures"
+    end
+  end
+end
