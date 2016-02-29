@@ -9,42 +9,42 @@ module Problems
 
       return head if head.nil? || head.next.nil?
 
-      _cursor = head.next
-      _last_node = head
+      cursor = head.next
+      last_node = head
 
-      while _cursor
-        _next_cursor = _cursor.next
-        _target = head
-        _last_target = nil
-        _inserted = false
+      while cursor
+        next_cursor = cursor.next
+        target = head
+        last_target = nil
+        inserted = false
 
-        if _last_node.val > _cursor.val
-          while _target
-            if _target.val > _cursor.val
-              _last_node.next = _cursor.next
+        if last_node.val > cursor.val
+          while target
+            if target.val > cursor.val
+              last_node.next = cursor.next
 
-              if _last_target
-                _last_target.next = _cursor
+              if last_target
+                last_target.next = cursor
               else
-                head = _cursor
+                head = cursor
               end
 
-              _cursor.next = _target
-              _target = nil
-              _inserted = true
+              cursor.next = target
+              target = nil
+              inserted = true
             else
-              if _target.next == _cursor
-                _target = nil
+              if target.next == cursor
+                target = nil
               else
-                _last_target = _target
-                _target = _target.next
+                last_target = target
+                target = target.next
               end
             end
           end
         end
 
-        _last_node = _last_node.next unless _inserted
-        _cursor = _next_cursor
+        last_node = last_node.next unless inserted
+        cursor = next_cursor
       end
       head
     end

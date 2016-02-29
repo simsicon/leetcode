@@ -24,18 +24,9 @@ module Problems
 
       while left_cursor || right_cursor
 
-        if left_cursor.nil?
-          cursor.next = right_cursor
-          cursor = cursor.next
-          right_cursor = right_cursor.next
-          next
-        end
-
-        if right_cursor.nil?
-          cursor.next = left_cursor
-          cursor = cursor.next
-          left_cursor = left_cursor.next
-          next
+        if left_cursor.nil? || right_cursor.nil?
+          cursor.next = left_cursor || right_cursor
+          break
         end
 
         if left_cursor.val < right_cursor.val
