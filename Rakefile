@@ -16,6 +16,7 @@ namespace :test do
   desc "Run test isolated"
   task :isolated do
     ARGV.shift
+    ARGV.each { |a| task a.to_sym do ; end }
     ARGV.each do |name|
       sh(Gem.ruby, "-I#{dir}/lib", "-I#{dir}/test", Dir.glob("#{dir}/test/cases/**/#{name}.rb").last) or raise "Failures"
     end
