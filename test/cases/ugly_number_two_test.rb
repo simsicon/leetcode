@@ -1,7 +1,5 @@
 require "minitest/autorun"
-require "list_node"
 require "test_helper"
-require "linked_list_test_helper"
 require "problems"
 
 class TestUglyNumberTwo < Minitest::Test
