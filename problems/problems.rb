@@ -4,6 +4,7 @@ require "merge_two_sorted_lists/problem"
 require "merge_k_sorted_lists/problem"
 require "ugly_number_two/problem"
 require "ugly_number/problem"
+require "happy_number/problem"
 
 module Problems
 end
