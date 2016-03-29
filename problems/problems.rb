@@ -6,6 +6,7 @@ require "ugly_number_two/problem"
 require "ugly_number/problem"
 require "happy_number/problem"
 require "count_primes/problem"
+require "house_robber_three/problem"
 
 module Problems
 end
